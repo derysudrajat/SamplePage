@@ -18,6 +18,7 @@ from django.contrib import admin
 from django.http import HttpResponse
 
 from about import views as viewAbout
+from list import views as viewList
 from sampleapp import views as viewSample
 
 
@@ -29,6 +30,7 @@ urlpatterns = [
     url(r'^sampleapp', include('sampleapp.urls')),
     url(r'^$', viewSample.home),
     url(r'^profile/', profile),
+    url(r'^todolist/', viewList.index),
     url(r'^admin/', admin.site.urls),
     url(r'about/$', viewAbout.index)
 ]
